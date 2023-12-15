@@ -5,3 +5,9 @@
 ```bash
 composer require ping2me/php
 ```
+
+## Usage
+
+```php
+
+```
