@@ -1,0 +1,21 @@
+{
+    "name": "ping2-me/php",
+    "description": "Ping2me PHP client",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ping2Me\\Php\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bangnokia",
+            "email": "bangnokia@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*"
+    }
+}
