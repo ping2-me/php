@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Ping2Me\\Php\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {

@@ -22,9 +22,20 @@ class Ping
      * @param string|null $endpoint
      * @return static
      */
-    public static function make($endpoint)
+    public static function make($endpoint = null)
     {
         return new static($endpoint);
+    }
+
+    /**
+     * @param string $endpoint
+     * @return static
+     */
+    public function to($endpoint)
+    {
+        static::$endpoint = $endpoint;
+
+        return $this;
     }
 
     /**
@@ -34,6 +45,10 @@ class Ping
      */
     public function send($message)
     {
+        if (!static::$endpoint) {
+            throw new \InvalidArgumentException('Please set up and endpoint first.');
+        }
+
         $payload = is_array($message) ? json_encode($message) : $message;
 
         try {
