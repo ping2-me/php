@@ -9,11 +9,22 @@ class Ping
     public static $debug = false;
 
     /**
-     * @param string $endpoint
+     * @param string|null $endpoint
      */
-    public function __construct($endpoint)
+    public function __construct($endpoint = null)
     {
-        static::$endpoint = $endpoint;
+        if ($endpoint) {
+            static::$endpoint = $endpoint;
+        }
+    }
+
+    /**
+     * @param string|null $endpoint
+     * @return static
+     */
+    public static function make($endpoint)
+    {
+        return new static($endpoint);
     }
 
     /**
