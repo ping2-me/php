@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-composer require ping2me/php
+composer require ping2-me/php
 ```
 
 ## Usage
