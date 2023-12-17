@@ -8,6 +8,9 @@ class Ping
 
     public static $debug = false;
 
+    /**
+     * @param string $endpoint
+     */
     public function __construct($endpoint)
     {
         static::$endpoint = $endpoint;
@@ -23,7 +26,7 @@ class Ping
         $payload = is_array($message) ? json_encode($message) : $message;
 
         try {
-            if (function_exists('shell_exec')) {
+            if (function_exists('shell_exec') && !empty(shell_exec('which curl'))) {
                 static::cli($payload);
             } else {
                 static::http($payload);
