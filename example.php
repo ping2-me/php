@@ -4,7 +4,7 @@ include './vendor/autoload.php';
 
 /**
  * ------------------------------------------------------------
- * This is the test file for the package.
+ * This is the example file for the package.
  * ------------------------------------------------------------
  *
  * To test the package, run this file in your terminal:
@@ -16,6 +16,6 @@ include './vendor/autoload.php';
  *
  */
 
-\Ping2Me\Php\Ping::$endpoint = '@daudau/debug';
+\Ping2Me\Php\Ping::$endpoint = '@daudau/debug'; // please use your own endpoint
 
 ping('function working!');
