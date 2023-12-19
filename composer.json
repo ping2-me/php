@@ -3,6 +3,7 @@
     "description": "Ping2me PHP client",
     "type": "library",
     "license": "MIT",
+    "keywords": ["ping2me", "laravel", "ping2.me", "notification", "telegram"],
     "autoload": {
         "psr-4": {
             "Ping2Me\\Php\\": "src/"
