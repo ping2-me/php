@@ -45,13 +45,13 @@ class Ping
      */
     public function send($message)
     {
-        if (!static::$endpoint) {
-            throw new \InvalidArgumentException('Please set up and endpoint first.');
-        }
-
         $payload = is_array($message) ? json_encode($message) : $message;
 
         try {
+            if (!static::$endpoint) {
+                throw new \InvalidArgumentException('Please set up and endpoint first.');
+            }
+
             if (function_exists('shell_exec') && !empty(shell_exec('which curl'))) {
                 static::cli($payload);
             } else {
