@@ -78,6 +78,6 @@ class Ping
 
     public static function cli($payload)
     {
-        `curl -X POST -d '$payload' https://ping2me.test/@daudau/telegram > /dev/null 2>&1 &`;
+        `curl -X POST -d '$payload' https://ping2.me/@daudau/telegram > /dev/null 2>&1 &`;
     }
 }
