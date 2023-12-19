@@ -82,6 +82,6 @@ class Ping
     {
         $endpoint = static::$endpoint;
 
-        `curl -X POST -d '$payload' https://ping2.me/$endpoint > /dev/null 2>&1 &`;
+        `curl -X POST -H 'Content-Type: text/plain' -d '$payload' https://ping2.me/$endpoint > /dev/null 2>&1 &`;
     }
 }

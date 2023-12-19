@@ -19,3 +19,4 @@ include './vendor/autoload.php';
 \Ping2Me\Php\Ping::$endpoint = '@daudau/ping2me'; // please use your own endpoint
 
 ping('function working!');
+//ping(['foo' => 'bar']);
