@@ -69,6 +69,8 @@ class Ping
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, 'https://ping2.me/' . static::$endpoint);
         curl_setopt($curl, CURLOPT_POST, 1);
+        // post as raw data
+        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: text/plain']);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
 
@@ -78,6 +80,8 @@ class Ping
 
     public static function cli($payload)
     {
-        `curl -X POST -d '$payload' https://ping2.me/@daudau/telegram > /dev/null 2>&1 &`;
+        $endpoint = static::$endpoint;
+
+        `curl -X POST -d '$payload' https://ping2.me/$endpoint > /dev/null 2>&1 &`;
     }
 }
