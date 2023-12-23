@@ -72,7 +72,7 @@ class Ping
         // post as raw data
         curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: text/plain']);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_exec($curl);
         curl_close($curl);
@@ -82,6 +82,7 @@ class Ping
     {
         $endpoint = static::$endpoint;
 
+        // omit the output
         `curl -X POST -H 'Content-Type: text/plain' -d '$payload' https://ping2.me/$endpoint > /dev/null 2>&1 &`;
     }
 }
