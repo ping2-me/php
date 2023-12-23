@@ -52,7 +52,8 @@ class Ping
                 throw new \InvalidArgumentException('Please set up and endpoint first.');
             }
 
-            if (function_exists('shell_exec') && !empty(shell_exec('which curl'))) {
+            // check if current os is not windows
+            if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
                 static::cli($payload);
             } else {
                 static::http($payload);
