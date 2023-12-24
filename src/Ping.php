@@ -41,7 +41,6 @@ class Ping
     /**
      * @param string|array $message
      * @return void
-     * @throws \Exception
      */
     public function send($message)
     {
