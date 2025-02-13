@@ -1,5 +1,7 @@
 <?php
 
+use Ping2Me\Php\Ping;
+
 if (!function_exists('ping')) {
     function ping(...$args)
     {
@@ -14,10 +16,10 @@ if (!function_exists('ping')) {
         }
 
         if ($argsCount === 1) {
-            \Ping2Me\Php\Ping::make()->send($args[0]);
+            Ping::make()->send($args[0]);
             return;
         }
 
-       \Ping2Me\Php\Ping::make()->to($args[0])->send($args[1]);
+       Ping::make()->to($args[0])->send($args[1]);
     }
 }
