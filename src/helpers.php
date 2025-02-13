@@ -3,23 +3,12 @@
 use Ping2Me\Php\Ping;
 
 if (!function_exists('ping')) {
-    function ping(...$args)
-    {
-        $argsCount = count($args);
-
-        if ($argsCount > 2) {
-            throw new \InvalidArgumentException('Too many arguments');
-        }
-
-        if ($argsCount === 0) {
-            throw new \InvalidArgumentException('Missing arguments');
-        }
-
-        if ($argsCount === 1) {
-            Ping::make()->send($args[0]);
+    function ping($payload, $to = null) {
+        if ($to === null) {
+            Ping::make()->send($payload);
             return;
         }
 
-       Ping::make()->to($args[0])->send($args[1]);
+       Ping::make()->to($to)->send($$payload);
     }
 }
