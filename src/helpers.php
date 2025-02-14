@@ -9,6 +9,6 @@ if (!function_exists('ping')) {
             return;
         }
 
-       Ping::make()->to($to)->send($$payload);
+       Ping::make()->to($to)->send($payload);
     }
 }
